@@ -1,0 +1,73 @@
+{
+  "repo": "binary-dev-generator-plane",
+  "language": "Rust",
+  "category": "Developer tools",
+  "goal": "Build a Rust toolkit that studies generator behavior through deny and allow fixtures, with explainable decision traces and local-only command execution.",
+  "review_model": {
+    "terms": [
+      "change width",
+      "diagnostic quality",
+      "review cost",
+      "safe rewrite"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "change width",
+      "signal": 46,
+      "slack": 31,
+      "drag": 10,
+      "confidence": 89,
+      "score": 182,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "diagnostic quality",
+      "signal": 64,
+      "slack": 27,
+      "drag": 22,
+      "confidence": 68,
+      "score": 157,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 74,
+      "slack": 46,
+      "drag": 26,
+      "confidence": 88,
+      "score": 204,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "safe rewrite",
+      "signal": 83,
+      "slack": 54,
+      "drag": 12,
+      "confidence": 80,
+      "score": 264,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "change width",
+      "signal": 61,
+      "slack": 52,
+      "drag": 26,
+      "confidence": 53,
+      "score": 149,
+      "lane": "ship"
+    }
+  ]
+}
